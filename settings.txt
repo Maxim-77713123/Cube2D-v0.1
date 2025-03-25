@@ -1,0 +1,17 @@
+# Cube2D Engine Settings
+
+# Основные настройки
+SCREEN_WIDTH=1024
+SCREEN_HEIGHT=768
+WINDOW_TITLE=Cube2D
+
+# Цикл игры
+MAX_FPS=120
+GAME_LOOP_RUNNING=True
+
+# Логирование
+ENABLE_LOGGING=True
+LOG_FILE=logs/game_log.txt
+
+# Звук
+ENABLE_SOUND=True
