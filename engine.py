@@ -1,26 +1,22 @@
-import os
-import importlib.util
+# engine.py
+import pygame
+import time
 
-class Engine:
-    def __init__(self):
-        self.mods = []
-        self.load_mods()
+def run():
+    """Запуск движка Cube2D."""
+    pygame.init()
+    screen = pygame.display.set_mode((1024, 768))
+    clock = pygame.time.Clock()
 
-    def load_mods(self):
-        mods_dir = "mods"
-        if not os.path.exists(mods_dir):
-            os.makedirs(mods_dir)
-        
-        for mod_name in os.listdir(mods_dir):
-            if mod_name.endswith(".py"):
-                mod_path = os.path.join(mods_dir, mod_name)
-                mod_name = mod_name[:-3]  # Убираем расширение .py
-                spec = importlib.util.spec_from_file_location(mod_name, mod_path)
-                mod = importlib.util.module_from_spec(spec)
-                spec.loader.exec_module(mod)
-                self.mods.append(mod)
-                print(f"Загружен мод: {mod_name}")
-    
-    def game_loop(self):
-        # Игровой цикл...
-        pass
+    # Основной игровой цикл
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        screen.fill((0, 0, 0))  # Очистка экрана
+        pygame.display.flip()  # Обновление экрана
+        clock.tick(60)  # Ограничение по FPS
+
+    pygame.quit()

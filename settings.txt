@@ -6,7 +6,7 @@ SCREEN_HEIGHT=768
 WINDOW_TITLE=Cube2D
 
 # Цикл игры
-MAX_FPS=120
+MAX_FPS=237
 GAME_LOOP_RUNNING=True
 
 # Логирование
